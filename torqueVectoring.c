@@ -173,12 +173,12 @@ void main(void)
 	mass_of_car=weight_transfer_rf+weight_transfer_lf+weight_transfer_rr+weight_transfer_lr;
 	if(throttle_position>0)
 	{
-	    s_peakr=21715;
-	    t_peakr=44.21;
-	    t_maxr_100=30;
-	    throttle_position=throttle_position/100;
-	    s_maxr=throttle_position*s_peakr;
-	    t_maxr=throttle_position*t_peakr;
+	    s_peakr = 21715;
+	    t_peakr = 44.21;
+	    t_maxr_100 = 30;
+	    throttle_position = throttle_position / 100;
+	    s_maxr = throttle_position * s_peakr;
+	    t_maxr = throttle_position * t_peakr;
 	    if(rear_left_motor_rpm<s_maxr)
 	    {
 	      torque_rear_left_motor=-(t_peakr/s_peakr)*front_left_motor_rpm+t_maxr;
