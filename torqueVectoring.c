@@ -165,10 +165,10 @@ void main(void)
     }
 	else
     {
-		weight_transfer_rf = weight_transfer_front+lateral_load_transfer_front;
-		weight_transfer_lf = weight_transfer_front-lateral_load_transfer_front;
-		weight_transfer_rr = weight_transfer_rear+lateral_load_transfer_rear;
-		weight_transfer_lr = weight_transfer_rear-lateral_load_transfer_rear;
+		weight_transfer_rf = weight_transfer_front + lateral_load_transfer_front;
+		weight_transfer_lf = weight_transfer_front - lateral_load_transfer_front;
+		weight_transfer_rr = weight_transfer_rear + lateral_load_transfer_rear;
+		weight_transfer_lr = weight_transfer_rear - lateral_load_transfer_rear;
     }
 	mass_of_car=weight_transfer_rf+weight_transfer_lf+weight_transfer_rr+weight_transfer_lr;
 	if(throttle_position>0)
