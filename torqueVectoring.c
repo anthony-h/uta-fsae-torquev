@@ -98,24 +98,33 @@ void main(void)
       (front_roll_rate+rear_roll_rate-sprung_mass_of_car*perpendicular_distance_between_sprung_mass_cg_and_roll_axis))+
 		  (((distance_of_sprung_cg_from_front_axle)/wheel_base)*rear_roll_center_height))))+
       ((front_unsprung_mass_front_unsprung_cg*g*rear_unsprung_mass_cg)/rear_tread);
-	lateral_load_transfer_front=lateral_load_transfer_front/g;
-	lateral_load_transfer_rear=lateral_load_transfer_rear/g;
-    wheel_speed_rf=front_right_motor_rpm*gear_ratio;
-    wheel_speed_lf=front_left_motor_rpm*gear_ratio;
-    wheel_speed_rr=rear_right_motor_rpm*gear_ratio;
-    wheel_speed_lr=rear_left_motor_rpm*gear_ratio;
-	steering_wheel_angle=(steering_wheel_compliance/rack_ratio)*(PI*180);
-    linear_velocity_rf = PI*wheel_diameter*wheel_speed_rf/60;
-    linear_velocity_lf = PI*wheel_diameter*wheel_speed_lf/60;
-    linear_velocity_rr = PI*wheel_diameter*wheel_speed_rr/60;
-    linear_velocity_lr = PI*wheel_diameter*wheel_speed_lr/60;
-    average_velocity = linear_velocity_lr+linear_velocity_rr+linear_velocity_lf+linear_velocity_rf;
-    steering_angle_rad = (steering_wheel_angle/rack_ratio)*(PI/180);
+	lateral_load_transfer_front = lateral_load_transfer_front / g;
+	lateral_load_transfer_rear = lateral_load_transfer_rear / g;
+    
+    //wheel speed
+    wheel_speed_rf = front_right_motor_rpm * gear_ratio;
+    wheel_speed_lf = front_left_motor_rpm  * gear_ratio;
+    wheel_speed_rr = rear_right_motor_rpm  * gear_ratio;
+    wheel_speed_lr = rear_left_motor_rpm   * gear_ratio;
+    
+    //steering angles
+	steering_wheel_angle = (steering_wheel_compliance/rack_ratio) * (PI * 180);
+    steering_angle_rad   = (steering_wheel_angle/rack_ratio) * (PI / 180);
+    
+    
+    //velocity
+    linear_velocity_rf = PI * wheel_diameter * wheel_speed_rf / 60;
+    linear_velocity_lf = PI * wheel_diameter * wheel_speed_lf / 60;
+    linear_velocity_rr = PI * wheel_diameter * wheel_speed_rr / 60;
+    linear_velocity_lr = PI * wheel_diameter * wheel_speed_lr / 60;
+    average_velocity   = linear_velocity_lr + linear_velocity_rr + linear_velocity_lf+linear_velocity_rf;
+    
+    //force
 	force_y_front=2;
 	force_y_rear=2;
 
 
-    if((throttle_position==0) && (regen_brake_position==0))
+    if((throttle_position == 0) && (regen_brake_position==0))
     {
       regen_brake_position=2;
     }
