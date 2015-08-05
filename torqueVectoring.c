@@ -105,12 +105,12 @@ void main(void)
     wheel_speed_rr=rear_right_motor_rpm*gear_ratio;
     wheel_speed_lr=rear_left_motor_rpm*gear_ratio;
 	steering_wheel_angle=(steering_wheel_compliance/rack_ratio)*(PI*180);
-    linear_velocity_rf=PI*wheel_diameter*wheel_speed_rf/60;
-    linear_velocity_lf=PI*wheel_diameter*wheel_speed_lf/60;
-    linear_velocity_rr=PI*wheel_diameter*wheel_speed_rr/60;
-    linear_velocity_lr=PI*wheel_diameter*wheel_speed_lr/60;
-    average_velocity=linear_velocity_lr+linear_velocity_rr+linear_velocity_lf+linear_velocity_rf;
-    steering_angle_rad=(steering_wheel_angle/rack_ratio)*(PI/180);
+    linear_velocity_rf = PI*wheel_diameter*wheel_speed_rf/60;
+    linear_velocity_lf = PI*wheel_diameter*wheel_speed_lf/60;
+    linear_velocity_rr = PI*wheel_diameter*wheel_speed_rr/60;
+    linear_velocity_lr = PI*wheel_diameter*wheel_speed_lr/60;
+    average_velocity = linear_velocity_lr+linear_velocity_rr+linear_velocity_lf+linear_velocity_rf;
+    steering_angle_rad = (steering_wheel_angle/rack_ratio)*(PI/180);
 	force_y_front=2;
 	force_y_rear=2;
 
