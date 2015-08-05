@@ -158,10 +158,10 @@ void main(void)
 	}*/
     if (accel_lat>0)
     {
-		weight_transfer_rf = weight_transfer_front-lateral_load_transfer_front;
-		weight_transfer_lf = weight_transfer_front+lateral_load_transfer_front;
-		weight_transfer_rr = weight_transfer_rear-lateral_load_transfer_rear;
-		weight_transfer_lr = weight_transfer_rear+lateral_load_transfer_rear;
+		weight_transfer_rf = weight_transfer_front - lateral_load_transfer_front;
+		weight_transfer_lf = weight_transfer_front + lateral_load_transfer_front;
+		weight_transfer_rr = weight_transfer_rear - lateral_load_transfer_rear;
+		weight_transfer_lr = weight_transfer_rear + lateral_load_transfer_rear;
     }
 	else
     {
